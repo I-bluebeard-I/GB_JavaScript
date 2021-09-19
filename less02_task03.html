@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /*
+        3. Объявить две переменные a и b и задать им целочисленные произвольные начальные значения.
+        Затем написать скрипт, который работает по следующему принципу:
+        - если a и b положительные, вывести их разность (ноль можно считать положительным числом);
+        - если а и b отрицательные, вывести их произведение;
+        - если а и b разных знаков, вывести их сумму;
+        */
+
+        function getRandomInt(min = -100, max = 100) {
+            return Math.round(Math.random() * (max - min) + min)
+        }
+
+        let a = getRandomInt()
+        let b = getRandomInt()
+
+        console.log('a = ' + a)
+        console.log('b = ' + b)
+
+        if (a >= 0 && b >= 0) {             // если a и b положительные, выводим их разность;
+            console.log(Math.abs(a - b))
+        } else if (a < 0 && b < 0) {        // если а и b отрицательные, выводим их произведение;
+            console.log(a * b)
+        } else {                            // для всех остальных случаев (= а и b разных знаков), выводим их сумму;
+            console.log(a + b)
+        }
+
+    </script>
+</body>
+
+</html>

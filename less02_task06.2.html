@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /*
+        6**. Программа должна спросить у пользователя число, это будет количество денег,
+        которое он хочет положить на счет в банке. Затем программа должна выдать примерно такое сообщение:
+        "Ваша сумма в 101 рубль успешно зачислена." - в случае если пользователь ввел 101.
+        "Ваша сумма в 10020 рублей успешно зачислена." - в случае если пользователь ввел 10020.
+        "Ваша сумма в 120104 рубля успешно зачислена." - в случае если пользователь ввел 120104.
+        То есть ваша задача выводить слово «рубль» в правильном падеже, в зависимости от введенного числа.
+        */
+
+        function getRes(sum, word) {
+            alert('Ваша сумма в ' + sum + ' ' + word + ' успешно зачислена.')
+        }
+
+
+        let sum = prompt('Введите сумму, которую хотите положить на счет в банке: ')
+        let word = null
+
+        if (!isFinite(sum)) {
+            alert('Нужноввести число, попробуйте еще раз.')
+
+        } else if (sum.length > 1 &&
+            (parseInt(sum.substr(-2, 2)) >= 11 && parseInt(sum.substr(-2, 2)) <= 14)) {
+            word = 'рублей'
+            getRes(sum, word)
+
+        } else {
+            switch (sum.substr(-1, 1)) {
+                case '0':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    word = 'рублей'
+                    break
+                case '2':
+                case '3':
+                case '4':
+                    word = 'рубля'
+                    break
+                case '1':
+                    word = 'рубль'
+            }
+            getRes(sum, word)
+        }
+
+    </script>
+</body>
+
+</html>
