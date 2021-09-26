@@ -41,12 +41,30 @@
         ];
 
 
+        // (2) [{…}, {…}]
+        //    0: {id: 3, price: 127, photos: Array(2)}
+        //    1: {id: 10, price: 26, photos: Array(1)}
+        //    length: 2
+        //    [[Prototype]]: Array(0)
 
-        let productWithPhoto = products.filter(function (checkPhoto) {
-            return item => 'photos' in item && item.photos.length > 0
-        })
-
+        let productWithPhoto = products.filter(item => 'photos' in item && item.photos.length > 0)
         console.log(productWithPhoto)
+
+
+        // (4) [{…}, {…}, {…}, {…}]
+        //     0: {id: 10, price: 26, photos: Array(1)}
+        //     1: {id: 8, price: 78}
+        //     2: {id: 3, price: 127, photos: Array(2)}
+        //     3: {id: 5, price: 499, photos: Array(0)}
+        //     length: 4
+
+        products.sort(compare);
+        function compare(a, b) {
+            if (+a.price > +b.price) return 1;
+            if (+a.price < +b.price) return -1;
+        }
+        console.log(products);
+
     </script>
 </body>
 
