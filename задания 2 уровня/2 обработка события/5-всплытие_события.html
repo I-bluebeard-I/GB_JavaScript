@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <ul>
         <li>
-            <button>Кнопка</button>
+            <button class='1'>Кнопка</button>
         </li>
         <li>
-            <button>Кнопка</button>
+            <button class='2'>Кнопка</button>
         </li>
         <li>
-            <button>Кнопка</button>
+            <button class='3'>Кнопка</button>
         </li>
     </ul>
 
@@ -24,7 +26,13 @@
     объект события, передаваемый в функцию-обработчик клика. -->
 
     <script>
-        
+        'use strict';
+
+        document.querySelector('ul').addEventListener('click', function (event) {
+            console.dir(event.target);
+        })
+
     </script>
 </body>
+
 </html>
