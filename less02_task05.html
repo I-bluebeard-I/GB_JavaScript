@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        /*
+        5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        переданного значения операции (использовать switch) выполнить одну из арифметических операций
+        (использовать функции из задания 4) и вернуть полученное значение.
+        */
+
+        function getSum(num1, num2) {
+            return num1 + num2
+        }
+
+        function getSub(num1, num2) {
+            return num1 - num2
+        }
+
+        function getMul(num1, num2) {
+            return num1 * num2
+        }
+
+        function getDiv(num1, num2) {
+            return num1 / num2
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case 'sum':
+                    return getSum(arg1, arg2)
+                case 'sub':
+                    return getSub(arg1, arg2)
+                case 'mul':
+                    return getMul(arg1, arg2)
+                case 'div':
+                    return getDiv(arg1, arg2)
+                default:
+                    return 'Exception'
+            }
+        }
+
+        console.log(mathOperation(10, 0, 'sum'))
+        console.log(mathOperation(40, 0, 'sub'))
+        console.log(mathOperation(40, 0, 'mul'))
+        console.log(mathOperation(40, 0, 'div'))
+        console.log(mathOperation(40, 0, 'asd'))
+
+    </script>
+</body>
+
+</html>
