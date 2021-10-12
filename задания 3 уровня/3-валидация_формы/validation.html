@@ -43,26 +43,21 @@
         const formEl = document.querySelector('form');
         const inputFirst = document.getElementById('first');
         const inputSecond = document.getElementById('second');
-        let notSend = [0, 0];
 
         formEl.addEventListener('submit', function (event) {
             if (inputFirst.value == '') {
                 inputFirst.style.borderColor = 'red';
-                notSend[0] = 1;
             } else {
                 inputFirst.style.borderColor = 'grey';
-                notSend[0] = 0;
             }
 
             if (inputSecond.value == '') {
                 inputSecond.style.borderColor = 'red';
-                notSend[1] = 1;
             } else {
                 inputSecond.style.borderColor = 'grey';
-                notSend[1] = 0;
             }
 
-            if (notSend[0] != 0 || notSend[1] != 0) {
+            if (inputFirst.value == '' || inputSecond.value == '') {
                 event.preventDefault();
             }
         })
